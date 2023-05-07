@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_management_app/auth/sign_in.dart';
 import 'package:task_management_app/auth/sign_up.dart';
 import 'package:task_management_app/onboarding/custom_button.dart';
+import 'package:task_management_app/onboarding/custom_widget.dart';
 
 class Onboarding3 extends StatelessWidget {
   const Onboarding3({Key? key}) : super(key: key);
@@ -13,16 +14,7 @@ class Onboarding3 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 400,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage('assets/images/hospital2.jpeg'),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(20)),
-            ),
+            const CustomWidget(assetPath: "assets/images/hospital2.jpeg"),
             const SizedBox(
               height: 30,
             ),

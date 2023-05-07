@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 40.0, bottom: 70),
+                padding: EdgeInsets.only(top: 30.0, bottom: 40),
                 child: Center(
                   child: Text(
                     "Welcome! Create your Task Management account",
@@ -59,7 +59,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         validator: (value) {
@@ -98,7 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20.0),
+                      padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: TextFormField(
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -137,7 +137,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 40,
+                      height: 20,
                     ),
                     CustomButton(
                       buttonLabel: "Register",
@@ -158,7 +158,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                     ),
                     const SizedBox(
-                      height: 16,
+                      height: 15,
                     ),
                     Center(
                       child: Row(
