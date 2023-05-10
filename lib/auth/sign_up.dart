@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management_app/auth/sign_in.dart';
+import 'package:task_management_app/home_page/home_page.dart';
 import 'package:task_management_app/onboarding/custom_button.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -11,6 +12,31 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
+  late final TextEditingController _name;
+  late final TextEditingController _email;
+  late final TextEditingController _phoneNumber;
+  late final TextEditingController _password;
+  late final TextEditingController _confirmPassword;
+
+  @override
+  void initState() {
+    _name = TextEditingController();
+    _email = TextEditingController();
+    _phoneNumber = TextEditingController();
+    _password = TextEditingController();
+    _confirmPassword = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _name.dispose();
+    _email.dispose();
+    _phoneNumber.dispose();
+    _password.dispose();
+    _confirmPassword.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   children: [
                     TextFormField(
+                      controller: _name,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Alaye enter your name";
@@ -61,6 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: TextFormField(
+                        controller: _email,
                         keyboardType: TextInputType.emailAddress,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -80,6 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     TextFormField(
+                      controller: _phoneNumber,
                       keyboardType: TextInputType.phone,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -100,6 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15.0),
                       child: TextFormField(
+                        controller: _password,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return "Password is required";
@@ -119,9 +149,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     TextFormField(
+                      controller: _confirmPassword,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Confirm Password";
+                          return "Password does not match";
                         } else {
                           return null;
                         }
@@ -143,14 +174,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       buttonLabel: "Register",
                       submit: () {
                         if (_formKey.currentState!.validate()) {
-                          Navigator.push(context,
+                          Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
-                            return const Placeholder(
-                              color: Colors.white,
-                              child: Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            );
+                            return const HomePage();
                           }));
                         } else {
                           print("Error!!!");

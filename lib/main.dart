@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management_app/auth/splash_screen.dart';
+import 'package:task_management_app/onboarding/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());

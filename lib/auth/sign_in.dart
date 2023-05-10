@@ -95,14 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonLabel: "Submit",
                   submit: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(context,
+                      Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) {
-                        // return const Placeholder(
-                        //   color: Colors.white,
-                        //   child: Center(
-                        //     child: CircularProgressIndicator(),
-                        //   ),
-                        // );
                         return const HomePage();
                       }));
                     } else {
