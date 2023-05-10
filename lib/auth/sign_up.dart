@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management_app/auth/sign_in.dart';
-import 'package:task_management_app/home_page/home_page.dart';
+import 'package:task_management_app/home_page/task_page.dart';
 import 'package:task_management_app/onboarding/custom_button.dart';
 
 class RegisterScreen extends StatefulWidget {

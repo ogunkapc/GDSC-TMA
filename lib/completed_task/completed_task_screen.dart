@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management_app/home_page/home_page.dart';
+import 'package:task_management_app/home_page/task_page.dart';
 
 class CompletedTaskPage extends StatefulWidget {
   const CompletedTaskPage({Key? key}) : super(key: key);
@@ -68,12 +68,12 @@ class _CompletedTaskPageState extends State<CompletedTaskPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
                                 Text(
-                                  "Complete Daily Exercise",
+                                  "Complete",
                                   style: TextStyle(
                                       fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
                                 ),
                                 SizedBox(height: 8.0,),
-                                Text("This task has to be completed today!! This task has to be completed today!! This task has to be completed today!! This task has to be completed today!! This task has to be completed today!!", style: TextStyle(fontSize: 16, color: Colors.white),)
+                                Text("This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! This task was completed today!! ", style: TextStyle(fontSize: 16, color: Colors.white),)
                               ],
                             ),
                           ),
